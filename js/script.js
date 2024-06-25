@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     loadTableData();
+
+    const photoInput = document.getElementById('photoInput');
+    const filePlaceholder = document.getElementById('filePlaceholder');
+
+    photoInput.addEventListener('change', function() {
+        if (photoInput.files.length > 0) {
+            filePlaceholder.textContent = photoInput.files[0].name;
+        } else {
+            filePlaceholder.textContent = 'Upload foto Anda';
+        }
+    });
 });
 
 document.getElementById('checkButton').addEventListener('click', function() {
@@ -44,6 +55,7 @@ document.getElementById('checkButton').addEventListener('click', function() {
                 // Clear the input field
                 nameInput.value = '';
                 photoInput.value = '';
+                filePlaceholder.textContent = 'Upload foto Anda';
             })
             .catch(error => console.error('Error:', error));
     };
