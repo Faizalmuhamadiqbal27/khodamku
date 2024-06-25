@@ -25,6 +25,11 @@ document.getElementById('checkButton').addEventListener('click', function() {
         return;
     }
 
+    if (!isNameValid(name)) {
+        alert("Nama hanya boleh diisi dengan huruf.");
+        return;
+    }
+
     if (photoInput.files.length === 0) {
         alert("Upload fotonya dulu ege!");
         return;
@@ -83,4 +88,9 @@ function loadTableData() {
         nameCell.textContent = item.name;
         khodamCell.textContent = item.khodam;
     });
+}
+
+function isNameValid(name) {
+    const regex = /^[a-zA-Z\s]+$/;
+    return regex.test(name);
 }
