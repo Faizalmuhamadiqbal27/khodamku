@@ -20,14 +20,14 @@
             font-weight: bold;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center; /* Menjaga ikon tetap di tengah secara horizontal */
             gap: 5px;
         }
 
         .floating-icon img {
             width: 20px;
             height: 20px;
-            display: block;
+            display: block; /* Memastikan gambar sebagai elemen block */
         }
 
         .file-input-container {
@@ -63,6 +63,20 @@
             font-size: 14px;
             color: #888;
         }
+
+        #resultContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #resultPhoto {
+            display: none;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-top: 10px; /* Tambahkan margin untuk sedikit spasi antara teks hasil dan foto */
+        }
     </style>
 </head>
 <body>
@@ -77,8 +91,8 @@
         </div>
         <button id="checkButton">Cek</button>
         <div id="resultContainer">
-            <img id="resultPhoto" style="display: none; width: 100px; height: 100px; object-fit: cover;">
             <p id="result"></p>
+            <img id="resultPhoto">
         </div>
     </div>
     <div class="container-check">
