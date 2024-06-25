@@ -33,8 +33,12 @@
     <div class="container">
         <h1>Ramal Khodam Kamu</h1>
         <input type="text" id="nameInput" placeholder="Ketik Nama Anda">
+        <input type="file" id="photoInput" accept="image/*">
         <button id="checkButton">Cek</button>
-        <p id="result"></p>
+        <div id="resultContainer">
+            <p id="result"></p>
+            <img id="resultPhoto" style="display: none; width: 100px; height: 100px; object-fit: cover;">
+        </div>
     </div>
     <div class="container-check">
         <h2>Riwayat Ramalan</h2>
